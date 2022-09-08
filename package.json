@@ -43,6 +43,7 @@
     "webpack-dev-server": "^4.11.0"
   },
   "dependencies": {
+    "copy-webpack-plugin": "^11.0.0",
     "eslint-plugin-jest": "^27.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
