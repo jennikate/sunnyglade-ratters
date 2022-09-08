@@ -1,19 +1,102 @@
 @use "reset.css";
 
 /* ==============
-  COLOURS
+  COLOURS & FONTS
 =============== */
-$brand-color: #253444;
+$brand-color: rgba(37,52,68, 1);
+$brand-color-tint: rgba(37,52,68, 0.9);
+$highlight-color: #aa3e3e;
+$contrast-color: #FFFFFF;
+
+$brand-font: 'Marcellus', serif;
+$body-font: 'Roboto', sans-serif;
+$font-color: #000000;
+
 
 
 /* ==============
-  IMAGES
+  TEXT
+=============== */
+body {
+  font-family: $body-font;
+  color: $font-color;
+}
+
+h1 {
+  font-family: $brand-font;
+  font-size: 4em;
+  color: $contrast-color;
+  text-shadow: 2px 2px #000;
+}
+
+.logo p {
+  margin: 0 auto;
+  font-size: 1.5rem;
+  color: $contrast-color;
+}
+
+@media only screen and (min-width: 600px) {
+  .logo p {
+    width: 60%;
+  }
+}
+
+/* ==============
+  HEADER
 =============== */
 
-.logo {
-  // background: url('../images/logo.png');
+header {
+  background-color: $brand-color-tint;
+  text-align: right;
+  background-image: url('../images/wow.png'), url('../images/adeu.png');
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  /* Hide the text. */
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 600px) {
+  header {
+    background-size: 10%;
+  }
+}
+
+/* ==============
+  LOGO & BRAND PANEL
+=============== */
+
+.brand {
   background-color: $brand-color;
+  height:70vh;
   width: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.brand p {
+  margin: 0 auto;
+  font-size: 1.5rem;
+  color: $contrast-color;
+}
+
+@media only screen and (min-width: 600px) {
+  .brand {
+    padding: 2rem;
+  }
+  .brand img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+  .brand p {
+    width: 60%;
+  }
 }
 
