@@ -1,0 +1,19 @@
+@use "reset.css";
+
+/* ==============
+  COLOURS
+=============== */
+$brand-color: #253444;
+
+
+/* ==============
+  IMAGES
+=============== */
+
+.logo {
+  // background: url('../images/logo.png');
+  background-color: $brand-color;
+  width: 100%;
+  text-align: center;
+}
+

@@ -1,5 +1,6 @@
 const Dotenv = require('dotenv-webpack');
 const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -24,19 +25,27 @@ module.exports = {
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/, // to import images and fonts
-        loader: 'url-loader',
-        options: { limit: false },
+        type: 'asset/inline',
       },
     ],
   },
   plugins: [
+    new CopyPlugin(
+      {
+        patterns: [
+          { from: 'src/assets/images', to: 'assets/images' },
+        ],
+      },
+    ),
     new Dotenv({systemvars: true}),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
+      favicon: "./src/assets/images/favicon.ico"
     }),
   ],
   devServer: {
     historyApiFallback: true,
+    hot: true,
     static: {
       directory: path.join(__dirname, 'dist'),
     },
