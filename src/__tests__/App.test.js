@@ -6,8 +6,8 @@ describe('App page basic setup', () => {
     it('should render the page with a h1', async () => {
       await waitFor(() => { render(<App />); });
 
-      const checkHeading = screen.getByText("Basic setup");
+      const checkHeading = screen.getByText("Sunnyglade Ratters");
       expect(checkHeading).toBeInTheDocument();
-      expect(checkHeading.outerHTML).toEqual("<h1>Basic setup</h1>");
+      expect(checkHeading.outerHTML).toEqual("<h1>Sunnyglade Ratters</h1>");
     });
 });
