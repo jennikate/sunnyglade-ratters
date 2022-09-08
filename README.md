@@ -29,4 +29,34 @@ Make testing work with Babel
   "presets": [...],
   "plugins": ["@babel/plugin-transform-runtime"]
 }
+```
+
+Make test work with eslint
+- .eslintrc.json
+```
+  {
+    "env": {
+        "jest": true
+    },
+    "extends": [
+        "plugin:jest/recommended"
+    ],
+    "plugins": [
+        "jest",
+        "babel"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.spec.js",
+          "*.spec.jsx"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
+  }
+```
+
 
