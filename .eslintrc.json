@@ -2,13 +2,15 @@
   "env": {
       "browser": true,
       "es2021": true,
-      "node": true
+      "node": true,
+      "jest": true
   },
   "extends": [
       "eslint:recommended",
       "plugin:react/recommended",
       "plugin:react/jsx-runtime",
-      "plugin:jsx-a11y/recommended"
+      "plugin:jsx-a11y/recommended",
+      "plugin:jest/recommended"
   ],
   "parserOptions": {
       "ecmaFeatures": {
@@ -18,12 +20,25 @@
       "sourceType": "module"
   },
   "plugins": [
-      "react"
+      "react",
+      "jest",
+      "babel"
   ],
   "rules": {
       "quotes": [ "error",  "single"],
       "semi": ["error", "always"],
       "no-console": ["warn"],
       "comma-dangle": ["error", "always-multiline"]
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.spec.js",
+        "*.spec.jsx"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }
