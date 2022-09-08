@@ -31,6 +31,21 @@ Make testing work with Babel
 }
 ```
 
+Making tests work with scss
+- `npm i babel-jest --save-dev`
+- jest.config.js file:
+remove:
+```
+  '\\.(css|less|sass|scss)$': '<rootDir>/src/__mocks__/assetMock.js',
+  '\\.(gif|png|jpg|ttf|eot|svg)$': '<rootDir>/src/__mocks__/assetMock.js',
+```
+add:
+```
+  moduleNameMapper: {
+    "^.+\\.(css|less|scss)$": "babel-jest"
+  },
+```
+
 Make test work with eslint
 - .eslintrc.json
 ```
