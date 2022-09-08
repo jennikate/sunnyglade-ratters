@@ -12,6 +12,9 @@ $brand-font: 'Marcellus', serif;
 $body-font: 'Roboto', sans-serif;
 $font-color: #000000;
 
+body {
+  background-color: $brand-color;
+}
 
 
 /* ==============
@@ -29,25 +32,18 @@ h1 {
   text-shadow: 2px 2px #000;
 }
 
-.logo p {
-  margin: 0 auto;
-  font-size: 1.5rem;
-  color: $contrast-color;
+h2 {
+  font-family: $brand-font;
+  font-size: 2rem;
+  color: $brand-color;
 }
 
-@media only screen and (min-width: 600px) {
-  .logo p {
-    width: 60%;
-  }
-}
 
 /* ==============
   HEADER
 =============== */
 
 header {
-  background-color: $brand-color-tint;
-  text-align: right;
   background-image: url('../images/wow.png'), url('../images/adeu.png');
   background-position: left center, right center;
   background-repeat: no-repeat;
@@ -65,11 +61,10 @@ header {
 }
 
 /* ==============
-  LOGO & BRAND PANEL
+  BRAND
 =============== */
 
 .brand {
-  background-color: $brand-color;
   height:70vh;
   width: 100%;
   text-align: center;
@@ -100,3 +95,24 @@ header {
   }
 }
 
+/* ==============
+  MEMBER
+=============== */
+
+.members {
+  background-color: $contrast-color;
+  text-align: center;
+  padding: 20px 0;
+}
+
+
+/* ==============
+  FOOTER
+=============== */
+footer {
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 40px 0 10px;
+}
